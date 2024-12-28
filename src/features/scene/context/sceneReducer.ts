@@ -118,9 +118,15 @@ export function sceneReducer(
                     origin: 'user',
                     isRight: false,
                 }
+                const rightMessage: IMessage = {
+                    characterId: state.userRoleId,
+                    content: payload.rightAnswer,
+                    origin: 'user',
+                    isRight: true,
+                }
                 return {
                     ...state,
-                    messages: [...state.messages, wrongMessage],
+                    messages: [...state.messages, wrongMessage, rightMessage],
                     sentenceStatus: 'userReadingFeedback',
                     translationExplanation: payload.explanation,
                 }
