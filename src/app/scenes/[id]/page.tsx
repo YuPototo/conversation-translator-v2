@@ -1,4 +1,5 @@
 import { getScene } from '@/data/scenes'
+import { ScenePlayer } from '@/features/scene/components/ScenePlayer'
 
 type Props = {
     params: {
@@ -7,16 +8,13 @@ type Props = {
 }
 
 export default async function ScenePage({ params }: Props) {
-    const scene = getScene(parseInt(params.id))
+    const { id } = await params
+    const scene = getScene(parseInt(id))
 
     return (
         <div className="p-8">
-            <h1 className="text-2xl font-bold mb-6">{scene.name}</h1>
-            <p>
-                {scene.conversation
-                    .map((sentence) => sentence.japanese)
-                    .join(' ')}
-            </p>
+            <h1 className="text-2xl font-bold mb-6">{scene.title}</h1>
+            <ScenePlayer scene={scene} />
         </div>
     )
 }

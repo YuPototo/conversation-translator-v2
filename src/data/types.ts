@@ -1,11 +1,11 @@
 export interface Scene {
     id: number
-    name: string
+    title: string
     characters: Character[]
     conversation: Sentence[]
 }
 
-export type SceneMeta = Pick<Scene, 'id' | 'name'>
+export type SceneMeta = Pick<Scene, 'id' | 'title'>
 
 export type Sentence = {
     id: number
