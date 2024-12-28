@@ -1,14 +1,16 @@
 import { Scene } from './types'
 import { SceneMeta } from './types'
-import { scene_1 } from './scenes/scene_1'
+import * as scenesTable from './scenesTable'
 import { getSceneMeta } from './getSceneMeta'
 
 export const scenesMeta: Record<string, SceneMeta> = {
-    [scene_1.id]: getSceneMeta(scene_1),
+    [scenesTable.scene_1.id]: getSceneMeta(scenesTable.scene_1),
+    [scenesTable.scene_2.id]: getSceneMeta(scenesTable.scene_2),
 }
 
 export const scenes: Record<string, Scene> = {
-    [scene_1.id]: scene_1,
+    [scenesTable.scene_1.id]: scenesTable.scene_1,
+    [scenesTable.scene_2.id]: scenesTable.scene_2,
 }
 
 export const getScene = (id: number) => {

@@ -13,8 +13,8 @@ export default async function ScenePage({ params }: Props) {
         <div className="p-8">
             <h1 className="text-2xl font-bold mb-6">{scene.name}</h1>
             <p>
-                {scene.conversations
-                    .map((conversation) => conversation.japanese)
+                {scene.conversation
+                    .map((sentence) => sentence.japanese)
                     .join(' ')}
             </p>
         </div>

@@ -2,7 +2,7 @@ export interface Scene {
     id: number
     name: string
     characters: Character[]
-    conversations: Sentence[]
+    conversation: Sentence[]
 }
 
 export type SceneMeta = Pick<Scene, 'id' | 'name'>
