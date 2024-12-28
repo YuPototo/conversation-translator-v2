@@ -1,3 +1,5 @@
+import { getScene } from '@/data/scenes'
+
 type Props = {
     params: {
         id: string
@@ -5,10 +7,16 @@ type Props = {
 }
 
 export default async function ScenePage({ params }: Props) {
+    const scene = getScene(parseInt(params.id))
+
     return (
         <div className="p-8">
-            <h1 className="text-2xl font-bold mb-6">Scene {params.id}</h1>
-            <p>You are viewing scene with ID: {params.id}</p>
+            <h1 className="text-2xl font-bold mb-6">{scene.name}</h1>
+            <p>
+                {scene.conversations
+                    .map((conversation) => conversation.japanese)
+                    .join(' ')}
+            </p>
         </div>
     )
 }
