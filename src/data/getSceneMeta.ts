@@ -5,6 +5,6 @@ import { Scene } from './types'
 export const getSceneMeta = (scene: Scene) => {
     return {
         id: scene.id,
-        name: scene.name,
+        title: scene.title,
     }
 }

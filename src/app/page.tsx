@@ -12,7 +12,7 @@ export default function HomePage() {
                             href={`/scenes/${scene.id}`}
                             className="text-blue-600 hover:text-blue-800 hover:underline"
                         >
-                            {scene.name}
+                            {scene.title}
                         </Link>
                     </li>
                 ))}
