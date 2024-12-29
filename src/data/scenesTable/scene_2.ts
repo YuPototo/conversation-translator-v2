@@ -94,7 +94,7 @@ const conversation = [
 
 export const scene_2: Scene = {
     id: 2,
-    name: 'Scene 2',
+    title: 'Scene 2',
     characters,
     conversation,
 }
