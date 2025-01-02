@@ -8,7 +8,7 @@ import {
     RECEIVE_USER_EVALUATION,
     CLICK_UNDERSTOOD_BTN,
 } from './sceneActions'
-import { type SceneState } from './sceneState'
+import { SentenceStatus, type SceneState } from './sceneState'
 
 export function sceneReducer(
     state: SceneState,
@@ -138,10 +138,21 @@ export function sceneReducer(
                 state.currentSentenceIndex + 1 <
                 state.sceneData.conversation.length
 
+            // decide next sentence status
+            let nextSentenceStatus: SentenceStatus | null = null
+            if (hasNextSentence) {
+                const nextSentence =
+                    state.sceneData.conversation[state.currentSentenceIndex + 1]
+                if (nextSentence.characterId === state.userRoleId) {
+                    nextSentenceStatus = 'userInputting'
+                } else {
+                    nextSentenceStatus = 'npcSending'
+                }
+            }
+
             return {
                 ...state,
-                // Assumption: next sentence is from NPC
-                sentenceStatus: hasNextSentence ? 'npcSending' : null,
+                sentenceStatus: nextSentenceStatus,
                 sceneStatus: hasNextSentence ? state.sceneStatus : 'ended',
                 translationExplanation: undefined,
                 currentSentenceIndex: hasNextSentence

@@ -5,7 +5,7 @@ type SceneStatus =
     /** While user is reading the scene description */
     'preparation' | 'inProgress' | 'ended'
 
-type SentenceStatus =
+export type SentenceStatus =
     | /** NPC is sending the message */
     'npcSending'
     /** User is inputting */

@@ -8,6 +8,8 @@ export const scenesMeta: Record<string, SceneMeta> = {
     [scenesTable.scene_2.id]: getSceneMeta(scenesTable.scene_2),
     [scenesTable.scene_3.id]: getSceneMeta(scenesTable.scene_3),
     [scenesTable.scene_4.id]: getSceneMeta(scenesTable.scene_4),
+    [scenesTable.scene_5.id]: getSceneMeta(scenesTable.scene_5),
+    [scenesTable.scene_6.id]: getSceneMeta(scenesTable.scene_6),
 }
 
 export const scenes: Record<string, Scene> = {
@@ -15,6 +17,8 @@ export const scenes: Record<string, Scene> = {
     [scenesTable.scene_2.id]: scenesTable.scene_2,
     [scenesTable.scene_3.id]: scenesTable.scene_3,
     [scenesTable.scene_4.id]: scenesTable.scene_4,
+    [scenesTable.scene_5.id]: scenesTable.scene_5,
+    [scenesTable.scene_6.id]: scenesTable.scene_6,
 }
 
 export const getScene = (id: number) => {
