@@ -1,3 +1,4 @@
+import { Character } from '@/data/types'
 import { useSceneContext } from '../context/SceneProvider'
 import { Message } from './Message'
 import { MessageLoading } from './MessageLoading'
@@ -43,7 +44,14 @@ export function MessageList() {
         <>
             {messages.map((message, index) => (
                 <div key={index} className="py-2">
-                    <Message message={message} character={currentSpeaker} />
+                    <Message
+                        message={message}
+                        character={
+                            characters.find(
+                                ({ id }) => id === message.characterId
+                            ) as Character
+                        }
+                    />
                 </div>
             ))}
 
